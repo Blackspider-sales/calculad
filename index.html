@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Calcula tu edad exacta en años, meses y días. Descubre tu signo zodiacal, la fase lunar de tu nacimiento y la historia del mundo cuando naciste.">
+<meta name="keywords" content="calculadora de edad, calcular edad, edad exacta, cuántos años tengo, edad en años meses días, signo zodiacal, fase lunar nacimiento">
+<title>Calculadora de Edad: Descubre Cuántos Años Tienes</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de Edad: Descubre Cuántos Años Tienes">
+<meta property="og:description" content="Calcula tu edad exacta y descubre datos fascinantes sobre el día en que naciste.">
+<meta property="og:locale" content="es_ES">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+<script src="src/js/theme.js"></script>
+</head>
+<body class="min-h-screen">
+<!-- Header -->
+<header class="border-b" style="border-color: var(--color-border);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: var(--color-primary);">
+        <span class="text-white font-bold text-sm font-display">C+</span>
+      </div>
+      <span class="font-display font-bold text-lg" style="color: var(--color-heading);">Calculad</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#calculadora" style="color: var(--color-body);">Calculadora</a>
+      <a href="#descubrimiento" style="color: var(--color-body);">Descubre</a>
+      <a href="#populares" style="color: var(--color-body);">Populares</a>
+      <a href="#faq" style="color: var(--color-body);">FAQ</a>
+    </nav>
+    <button data-theme-toggle aria-label="Cambiar tema" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background-color: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-heading);">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+  <div class="text-center mb-10">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold mb-4">
+      Calculadora de Edad: Descubre Cuántos Años Tienes
+    </h1>
+    <p class="text-base sm:text-lg max-w-2xl mx-auto" style="color: var(--color-body);">
+      Calcula tu edad exacta y descubre datos fascinantes sobre el día en que naciste.
+    </p>
+  </div>
+
+  <!-- Calculator -->
+  <div id="calculadora" class="max-w-3xl mx-auto card p-6 md:p-8 shadow-sm">
+    <form id="age-form" class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
+      <div>
+        <label for="dob" class="block text-sm font-medium mb-2" style="color: var(--color-heading);">Fecha de nacimiento</label>
+        <input type="date" id="dob" required class="input-field w-full px-4 py-3 rounded-lg" aria-label="Fecha de nacimiento">
+      </div>
+      <div>
+        <label for="ref" class="block text-sm font-medium mb-2" style="color: var(--color-heading);">Calcular en la fecha</label>
+        <input type="date" id="ref" class="input-field w-full px-4 py-3 rounded-lg" aria-label="Fecha de cálculo">
+      </div>
+      <div>
+        <button type="submit" class="btn-primary w-full px-6 py-3 rounded-lg font-semibold">
+          Calcular Edad
+        </button>
+      </div>
+    </form>
+    <p class="text-xs mt-3" style="color: var(--color-body);">
+      Tus datos se procesan solo en tu navegador. No se envían a ningún servidor.
+    </p>
+  </div>
+
+  <!-- Results -->
+  <div id="results" class="hidden max-w-4xl mx-auto mt-8"></div>
+</section>
+
+<!-- Discovery section -->
+<section id="descubrimiento" class="border-t py-16 md:py-20" style="border-color: var(--color-border);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <h2 class="text-2xl md:text-3xl font-display font-bold text-center mb-3">Descubre el Día que Naciste</h2>
+    <p class="text-center mb-10 max-w-2xl mx-auto" style="color: var(--color-body);">
+      Más allá de tu edad, tu fecha de nacimiento guarda información fascinante sobre el mundo y sobre ti.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <a href="#" class="card p-5 hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">♈</div>
+        <h3 class="font-semibold text-sm mb-1">Signo Zodiacal</h3>
+        <p class="text-xs" style="color: var(--color-body);">Tu signo occidental</p>
+      </a>
+      <a href="#" class="card p-5 hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">🌑</div>
+        <h3 class="font-semibold text-sm mb-1">Fase Lunar</h3>
+        <p class="text-xs" style="color: var(--color-body);">La luna al nacer</p>
+      </a>
+      <a href="#" class="card p-5 hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">💎</div>
+        <h3 class="font-semibold text-sm mb-1">Piedra de Nacimiento</h3>
+        <p class="text-xs" style="color: var(--color-body);">Según tu mes</p>
+      </a>
+      <a href="#" class="card p-5 hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">📜</div>
+        <h3 class="font-semibold text-sm mb-1">Historia</h3>
+        <p class="text-xs" style="color: var(--color-body);">Eventos de tu día</p>
+      </a>
+      <a href="#" class="card p-5 hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">⭐</div>
+        <h3 class="font-semibold text-sm mb-1">Famosos</h3>
+        <p class="text-xs" style="color: var(--color-body);">Con tu cumpleaños</p>
+      </a>
+      <a href="#" class="card p-5 hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">🪐</div>
+        <h3 class="font-semibold text-sm mb-1">Edad Planetaria</h3>
+        <p class="text-xs" style="color: var(--color-body);">En otros planetas</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Popular calculators -->
+<section id="populares" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="text-2xl md:text-3xl font-display font-bold text-center mb-10">Calculadoras Populares</h2>
+  <div id="popular-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="border-t py-16" style="border-color: var(--color-border);">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <h2 class="text-2xl md:text-3xl font-display font-bold mb-8">Preguntas Frecuentes</h2>
+    <div class="space-y-4" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t py-10" style="border-color: var(--color-border);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-sm" style="color: var(--color-body);">
+    <p>&copy; 2026 Calculad. Todos los derechos reservados.</p>
+    <p class="mt-2 text-xs">Las funciones astronómicas y de astrología son aproximadas con fines informativos.</p>
+  </div>
+</footer>
+
+<script src="src/js/app.js"></script>
+</body>
+</html>
