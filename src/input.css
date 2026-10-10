@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #F7F9FC;
+  --color-surface: #FFFFFF;
+  --color-primary: #2864DC;
+  --color-primary-hover: #1D4FB5;
+  --color-secondary: #EAF1FF;
+  --color-heading: #18243A;
+  --color-body: #475569;
+  --color-border: #E2E8F0;
+  --color-success: #16856A;
+  --color-highlight: #FFF5DF;
+}
+
+.dark {
+  --color-bg: #0D1422;
+  --color-surface: #151F30;
+  --color-surface-elev: #1D2A3D;
+  --color-primary: #79A8FF;
+  --color-primary-hover: #A0C2FF;
+  --color-heading: #F3F6FC;
+  --color-body: #A9B8CE;
+  --color-border: #2A3950;
+  --color-success: #4BD1AC;
+  --color-highlight: #352B1D;
+}
+
+html, body {
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.btn-primary:hover { background-color: var(--color-primary-hover); }
+.btn-primary:active { transform: translateY(1px); }
+
+.input-field {
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-heading);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(40, 100, 220, 0.15);
+}
