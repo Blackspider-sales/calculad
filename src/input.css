@@ -36,6 +36,9 @@ html, body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 1rem; }
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading);
   font-family: 'Manrope', 'Inter', sans-serif;
@@ -68,4 +71,28 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(40, 100, 220, 0.15);
+}
+
+:is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.moon-card { overflow: hidden; }
+.moon-layout { display: flex; align-items: center; gap: 1.5rem; }
+.moon-visual { width: 7.5rem; height: 7.5rem; flex: 0 0 7.5rem; filter: drop-shadow(0 7px 12px rgba(24, 36, 58, 0.16)); }
+.moon-stats { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.875rem; color: var(--color-body); }
+.zodiac-symbol, .birth-icon { width: 2.75rem; height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 2.75rem; border-radius: 0.75rem; background-color: var(--color-secondary); color: var(--color-primary); font-size: 1.75rem; }
+.birth-icon { font-size: 1.35rem; }
+.zodiac-details { display: grid; gap: 0.25rem; }
+.milestone-timeline { position: relative; display: grid; gap: 1.25rem; padding-left: 1.75rem; }
+.milestone-timeline::before { content: ''; position: absolute; top: 0.45rem; bottom: 0.45rem; left: 0.45rem; width: 2px; background-color: var(--color-border); }
+.milestone { position: relative; }
+.milestone-dot { position: absolute; left: -1.75rem; top: 0.3rem; z-index: 1; width: 0.95rem; height: 0.95rem; border: 3px solid var(--color-surface); border-radius: 999px; background-color: var(--color-border); }
+.milestone.is-complete .milestone-dot { background-color: var(--color-success); }
+.milestone-status { display: inline-block; margin-left: 0.35rem; padding: 0.1rem 0.45rem; border-radius: 999px; background-color: var(--color-secondary); color: var(--color-primary); font-size: 0.7rem; font-weight: 600; vertical-align: middle; }
+
+@media (max-width: 639px) {
+  .moon-layout { align-items: flex-start; gap: 1rem; }
+  .moon-visual { width: 5.5rem; height: 5.5rem; flex-basis: 5.5rem; }
 }

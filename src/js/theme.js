@@ -42,6 +42,10 @@
   
   // Listen for system preference changes
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-    if (!getStoredTheme()) applyTheme(e.matches ? 'dark' : 'light');
+    if (!getStoredTheme()) {
+      const theme = e.matches ? 'dark' : 'light';
+      applyTheme(theme);
+      window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
+    }
   });
 })();

@@ -6,15 +6,41 @@
 <meta name="description" content="Calcula tu edad exacta en años, meses y días. Descubre tu signo zodiacal, la fase lunar de tu nacimiento y la historia del mundo cuando naciste.">
 <meta name="keywords" content="calculadora de edad, calcular edad, edad exacta, cuántos años tengo, edad en años meses días, signo zodiacal, fase lunar nacimiento">
 <title>Calculadora de Edad: Descubre Cuántos Años Tienes</title>
+<meta name="theme-color" content="#F7F9FC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1422" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Calculadora de Edad: Descubre Cuántos Años Tienes">
 <meta property="og:description" content="Calcula tu edad exacta y descubre datos fascinantes sobre el día en que naciste.">
 <meta property="og:locale" content="es_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232864DC'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,sans-serif' font-size='31' font-weight='700' fill='white'%3EC%2B%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/styles.css">
 <script src="src/js/theme.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Calculad",
+      "url": "https://PLACEHOLDER.com/",
+      "inLanguage": "es"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Calculadora de Edad Calculad",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web",
+      "url": "https://PLACEHOLDER.com/",
+      "inLanguage": "es",
+      "description": "Calculadora web para conocer la edad exacta y consultar datos culturales y astronómicos aproximados de una fecha de nacimiento.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  ]
+}
+</script>
 </head>
 <body class="min-h-screen">
 <!-- Header -->
@@ -32,7 +58,7 @@
       <a href="#populares" style="color: var(--color-body);">Populares</a>
       <a href="#faq" style="color: var(--color-body);">FAQ</a>
     </nav>
-    <button data-theme-toggle aria-label="Cambiar tema" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background-color: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-heading);">
+    <button type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background-color: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-heading);">
       <span id="theme-icon">🌙</span>
     </button>
   </div>
@@ -51,7 +77,7 @@
 
   <!-- Calculator -->
   <div id="calculadora" class="max-w-3xl mx-auto card p-6 md:p-8 shadow-sm">
-    <form id="age-form" class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
+    <form id="age-form" aria-label="Calculadora de edad" class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
       <div>
         <label for="dob" class="block text-sm font-medium mb-2" style="color: var(--color-heading);">Fecha de nacimiento</label>
         <input type="date" id="dob" required class="input-field w-full px-4 py-3 rounded-lg" aria-label="Fecha de nacimiento">
@@ -61,7 +87,7 @@
         <input type="date" id="ref" class="input-field w-full px-4 py-3 rounded-lg" aria-label="Fecha de cálculo">
       </div>
       <div>
-        <button type="submit" class="btn-primary w-full px-6 py-3 rounded-lg font-semibold">
+        <button type="submit" aria-label="Calcular edad" class="btn-primary w-full px-6 py-3 rounded-lg font-semibold">
           Calcular Edad
         </button>
       </div>
@@ -72,7 +98,7 @@
   </div>
 
   <!-- Results -->
-  <div id="results" class="hidden max-w-4xl mx-auto mt-8"></div>
+  <div id="results" role="status" aria-live="polite" aria-atomic="true" class="hidden max-w-4xl mx-auto mt-8"></div>
 </section>
 
 <!-- Discovery section -->
