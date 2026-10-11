@@ -424,22 +424,44 @@
     getWesternZodiac, getChineseZodiac, getMoonPhase, getMilestones
   };
 
-  // ---------- Motion ----------
+  // ---------- Motion (progressive enhancement, fail-safe) ----------
+  // Hiding is OPT-IN: the CSS only hides .reveal / .result-item elements when
+  // <html class="motion-enabled"> is present. If JS fails for any reason
+  // (CSP block, network error, script error), the flag is never added and
+  // every element stays fully visible. We add the flag EARLY (at the top of
+  // this IIFE) so it is set before the browser's first paint.
   function setupMotion() {
     if (!('IntersectionObserver' in window)) {
-      // No observer: leave everything visible instead of hiding it forever.
-      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+      // No observer available: never opt into hiding. Leave everything visible.
       return;
     }
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Siblings reveal in sequence with a 60ms step, capped so long lists do not lag.
-    var groups = document.querySelectorAll('.reveal-group');
-    groups.forEach(function (group) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // User opted out of motion: never opt into hiding either.
+      return;
+    }
+    // Reveal anything currently in the viewport immediately, so it does not
+    // flicker. The flag is already set by now (see top of this script), but
+    // adding is-visible to in-view elements removes them from the hidden rule.
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight) {
+        el.classList.add('is-visible');
+      }
+    });
+    // Set stagger delays for groups of siblings that were present at init.
+    document.querySelectorAll('.reveal-group').forEach(function (group) {
       Array.prototype.forEach.call(group.querySelectorAll('.reveal'), function (el, i) {
-        el.style.transitionDelay = Math.min(i, 11) * 60 + 'ms';
+        if (!el.classList.contains('is-visible')) el.style.transitionDelay = Math.min(i, 11) * 60 + 'ms';
       });
     });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupMotion);
+
+  // Auto-discover dynamically injected .reveal / .result-item elements.
+  // The results panel and the FAQ are built after init, so they would
+  // otherwise never be observed and would stay hidden. A MutationObserver
+  // watches the body and observes any new reveal elements as they appear.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -447,37 +469,30 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
 
-    var targets = document.querySelectorAll('.reveal');
-    Array.prototype.forEach.call(targets, function (el) {
-      // Above the fold: reveal immediately. Off-screen: reveal on scroll.
-      if (reduce || el.getBoundingClientRect().top < window.innerHeight * 0.85) {
-        el.classList.add('is-visible');
-      } else {
-        observer.observe(el);
-      }
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach(function (el) {
+      observer.observe(el);
     });
 
-    // Results are injected after submit, so re-scan them there.
-    document.addEventListener('calculated', function () {
-      var results = document.getElementById('results');
-      if (!results || results.classList.contains('is-visible')) return;
-      Array.prototype.forEach.call(results.querySelectorAll('.result-item'), function (el, i) {
-        el.style.transitionDelay = Math.min(i, 11) * 50 + 'ms';
+    var mo = new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(function (node) {
+          if (node.nodeType !== 1) return;
+          var els = node.matches && node.matches('.reveal:not(.is-visible)')
+            ? [node]
+            : Array.prototype.slice.call(node.querySelectorAll ? node.querySelectorAll('.reveal:not(.is-visible)') : []);
+          els.forEach(function (el) {
+            // Above the fold: show immediately, do not animate from hidden.
+            if (el.getBoundingClientRect().top < window.innerHeight) {
+              el.classList.add('is-visible');
+            } else {
+              observer.observe(el);
+            }
+          });
+        });
       });
-      observer.observe(results);
     });
+    mo.observe(document.body, { childList: true, subtree: true });
   }
-
-  document.addEventListener('DOMContentLoaded', setupMotion);
-
-  // Safety net: if anything went wrong (JS error, observer never fires,
-  // slow network, reduced-motion misfiring), force-reveal everything so
-  // content is NEVER stuck invisible. 2.5s is well under human patience.
-  setTimeout(function () {
-    document.querySelectorAll('.reveal:not(.is-visible), .result-item:not(.is-visible)').forEach(function (el) {
-      el.classList.add('is-visible');
-    });
-  }, 2500);
 })();

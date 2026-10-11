@@ -31,48 +31,56 @@ body *:not(.card-hover):not(.btn-primary):not(.input-field) {
 
 /* Primary button hover is handled in src/styles.css; keep it at 150ms. */
 
-/* Scroll reveal: fade + 16px rise, 600ms, gentle ease-out.
-   Inline transition-delay carries the per-group stagger. */
+/* ---- Scroll reveal (progressive enhancement, fail-safe) ----
+   Default state: .reveal is FULLY VISIBLE. Nothing is hidden unless JS has
+   run and added the `motion-enabled` class to <html>, AND the element has
+   not yet been revealed. This guarantees content is never stuck invisible
+   if JS fails for any reason (CSP block, network error, script error). */
 .reveal {
-  opacity: 0;
-  transform: translateY(16px);
   transition:
     opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
     transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
     background-color 200ms ease,
     border-color 200ms ease;
 }
+/* Only hide when JS has opted in to motion AND the element is pending. */
+html.motion-enabled .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(16px);
+}
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Results: the injected cards stagger in 50ms apart. The container also
-   carries .reveal, so the whole block fades in before its cards cascade. */
-.result-item {
+/* Results: injected cards stagger in 50ms apart. Same fail-safe rule — only
+   hidden when JS has confirmed motion via the html.motion-enabled flag. */
+html.motion-enabled .result-item:not(.is-visible) {
   opacity: 0;
   transform: translateY(8px);
 }
+.result-item,
 .result-item.is-visible,
 #results.is-visible .result-item {
-  opacity: 1;
-  transform: none;
   transition:
     opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
     transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
     background-color 200ms ease,
     border-color 200ms ease;
 }
+.result-item.is-visible,
+#results.is-visible .result-item {
+  opacity: 1;
+  transform: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  /* !important beats the more specific .is-visible rules above, so content is
-     always fully visible for users who opt out of motion. */
+  /* Force content visible regardless of the motion-enabled flag. */
+  html.motion-enabled .reveal:not(.is-visible),
+  html.motion-enabled .result-item:not(.is-visible),
   .reveal,
-  .reveal.is-visible,
-  .result-item,
-  .result-item.is-visible,
-  #results.is-visible .result-item {
+  .result-item {
     opacity: 1 !important;
     transform: none !important;
   }
