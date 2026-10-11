@@ -23,14 +23,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/styles.css">
+<link rel="stylesheet" href="src/styles-animations.css">
 <script src="src/js/theme.js"></script>
 <script>
-  // Mantén la iconografía del toggle de tema en páginas que no cargan app.js.
+  // SVG icon swap for theme toggle (no emoji, uses inline SVG like index.html)
   (function () {
+    var MOON_SVG = '<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Modo oscuro"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+    var SUN_SVG = '<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Modo claro"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41-1.41"/></svg>';
+    
     function updateIcon() {
       var dark = document.documentElement.classList.contains('dark');
       var icon = document.getElementById('theme-icon');
-      if (icon) icon.textContent = dark ? '\u2600\uFE0F' : '\uD83C\uDF19';
+      if (icon) icon.innerHTML = dark ? SUN_SVG : MOON_SVG;
       var btn = document.querySelector('[data-theme-toggle]');
       if (btn) {
         btn.setAttribute('aria-pressed', String(dark));
@@ -39,7 +43,6 @@
     }
     updateIcon();
     window.addEventListener('themechange', updateIcon);
-    window.addEventListener('DOMContentLoaded', updateIcon);
   })();
 </script>
 </head>
@@ -58,7 +61,7 @@
       <a href="/#faq" style="color: var(--color-body);">FAQ</a>
     </nav>
     <button type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background-color: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-heading);">
-      <span id="theme-icon">\uD83C\uDF19</span>
+      <span id="theme-icon"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Modo oscuro"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
     </button>
   </div>
 </header>

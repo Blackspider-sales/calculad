@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Política de Privacidad de Fechaviva: esta calculadora de edad se ejecuta por completo en tu navegador y no recoge datos personales.">
+<meta name="robots" content="index, follow">
+<title>Política de Privacidad - Fechaviva</title>
+<meta name="theme-color" content="#F7F9FC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1422" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Política de Privacidad - Fechaviva">
+<meta property="og:description" content="Cómo Fechaviva trata tu privacidad: todo el cálculo ocurre en tu navegador.">
+<meta property="og:url" content="https://fechaviva.com/privacy-policy.html">
+<meta property="og:image" content="https://fechaviva.com/og-image.png">
+<meta property="og:locale" content="es_ES">
+<link rel="canonical" href="https://fechaviva.com/privacy-policy.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232864DC'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,sans-serif' font-size='31' font-weight='700' fill='white'%3EC%2B%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+<script src="src/js/theme.js"></script>
+<script>
+  // Mantén la iconografía del toggle de tema en páginas que no cargan app.js.
+  (function () {
+    function updateIcon() {
+      var dark = document.documentElement.classList.contains('dark');
+      var icon = document.getElementById('theme-icon');
+      if (icon) icon.textContent = dark ? '\u2600\uFE0F' : '\uD83C\uDF19';
+      var btn = document.querySelector('[data-theme-toggle]');
+      if (btn) {
+        btn.setAttribute('aria-pressed', String(dark));
+        btn.setAttribute('aria-label', dark ? 'Activar modo claro' : 'Activar modo oscuro');
+      }
+    }
+    updateIcon();
+    window.addEventListener('themechange', updateIcon);
+    window.addEventListener('DOMContentLoaded', updateIcon);
+  })();
+</script>
+</head>
+<body class="min-h-screen">
+<header class="border-b" style="border-color: var(--color-border);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: var(--color-primary);">
+        <span class="text-white font-bold text-sm font-display">C+</span>
+      </div>
+      <span class="font-display font-bold text-lg" style="color: var(--color-heading);">Fechaviva</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="/#calculadora" style="color: var(--color-body);">Calculadora</a>
+      <a href="/#descubrimiento" style="color: var(--color-body);">Descubre</a>
+      <a href="/#faq" style="color: var(--color-body);">FAQ</a>
+    </nav>
+    <button type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background-color: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-heading);">
+      <span id="theme-icon">\uD83C\uDF19</span>
+    </button>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+  <article>
+    <header class="mb-10 border-b pb-6" style="border-color: var(--color-border);">
+      <h1 class="text-3xl md:text-4xl font-display font-extrabold mb-3">Política de Privacidad</h1>
+      <p class="text-sm" style="color: var(--color-body);">Última actualización: 11 de octubre de 2026</p>
+    </header>
+
+    <section class="mb-10">
+      <p class="text-lg leading-relaxed" style="color: var(--color-body);">
+        Fechaviva es una calculadora de edad que funciona íntegramente en tu navegador. No recogemos,
+        almacenamos ni transmitimos datos personales. Esta página explica qué datos (si acaso) se
+        procesan y qué controles tienes sobre ellos.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-display font-bold mb-4">1. Qué datos procesamos</h2>
+      <p class="leading-relaxed mb-3" style="color: var(--color-body);">
+        Introduces una fecha de nacimiento y, opcionalmente, una fecha de referencia. Ese es el
+        único dato que el sitio procesa, y lo hace exclusivamente en tu navegador con JavaScript
+        local (la función <code>calculateAge</code> en <code>src/js/app.js</code>).
+      </p>
+      <p class="leading-relaxed" style="color: var(--color-body);">
+        No se envía ninguna petición de red con esos datos: no hay llamadas <code>fetch</code>,
+        <code>XMLHttpRequest</code> ni formularios que posteen a un servidor. Tampoco pedimos correo
+        electrónico, registro, pago ni datos de contacto. Al cerrar la pestaña, los datos desaparecen
+        junto con la página.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-display font-bold mb-4">2. Cookies y almacenamiento local</h2>
+      <p class="leading-relaxed mb-3" style="color: var(--color-body);">
+        El sitio no usa cookies ni <code>sessionStorage</code>, ni ningún identificador de usuario o
+        dispositivo para rastrear tu actividad.
+      </p>
+      <p class="leading-relaxed mb-3" style="color: var(--color-body);">
+        Hay una excepción puntual: la preferencia de tema se guarda en <code>localStorage</code> con
+        la clave <code>calcultad-theme</code>, tomando el valor <code>dark</code> o
+        <code>light</code>. Ese dato:
+      </p>
+      <ul class="space-y-2 leading-relaxed" style="color: var(--color-body);">
+        <li>Se escribe y lee localmente en tu navegador (<code>src/js/theme.js</code>).</li>
+        <li>No se envía a ningún servidor ni se comparte con terceros.</li>
+        <li>No identifica a una persona ni a un dispositivo y no se usa con fines de seguimiento.</li>
+        <li>Sirve únicamente para recordar tu preferencia entre modo claro y oscuro entre visitas.</li>
+        <li>Puedes borrarlo en cualquier momento desde los ajustes de tu navegador eliminando los datos de sitio de fechaviva.com.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-display font-bold mb-4">3. Recursos de terceros</h2>
+      <p class="leading-relaxed mb-3" style="color: var(--color-body);">
+        La única dependencia de terceros son las fuentes tipográficas <strong style="color: var(--color-heading);">Inter</strong> y <strong style="color: var(--color-heading);">Manrope</strong>, servidas desde el CDN de Google Fonts (<code>fonts.googleapis.com</code> y <code>fonts.gstatic.com</code>).
+      </p>
+      <ul class="space-y-2 leading-relaxed mb-3" style="color: var(--color-body);">
+        <li>La conexión se realiza por HTTPS.</li>
+        <li>Se transmiten únicamente tu dirección IP y las fuentes solicitadas. No se envían datos personales ni se realizan operaciones de analítica o segmentación publicitaria.</li>
+        <li>Puedes bloquear Google Fonts con un bloqueador de contenido: el sitio seguirá funcionando con las fuentes de respaldo del sistema operativo.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-display font-bold mb-4">4. Publicidad</h2>
+      <p class="leading-relaxed" style="color: var(--color-body);">
+        Fechaviva no muestra anuncios, no integra píxeles publicitarios ni carga scripts de analítica
+        de terceros (no hay Google Analytics, Meta Pixel, Hotjar ni herramientas similares). El sitio
+        se sostiene sin publicidad ni venta de datos.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-display font-bold mb-4">5. Tus derechos</h2>
+      <p class="leading-relaxed mb-3" style="color: var(--color-body);">
+        Como no recogemos ni almacenamos datos identificables, no hay solicitudes de derechos
+        (acceso, rectificación, supresión, portabilidad, oposición) que Fechaviva deba tramitar.
+      </p>
+      <p class="leading-relaxed" style="color: var(--color-body);">
+        La única información persistente es tu preferencia de tema, y puedes eliminarla en cualquier
+        momento desde la configuración de tu navegador sin necesidad de escribirnos.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-display font-bold mb-4">6. Modificaciones a esta política</h2>
+      <p class="leading-relaxed" style="color: var(--color-body);">
+        Si algún día cambian las circunstancias del servicio y esta política debe actualizarse,
+        modificaremos la fecha de "Última actualización" al inicio de la página y, para cambios
+        sustanciales, lo anunciaremos de forma visible en el sitio.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-display font-bold mb-4">7. Contacto</h2>
+      <p class="leading-relaxed mb-2" style="color: var(--color-body);">
+        Para cualquier consulta sobre privacidad, escríbenos a:
+      </p>
+      <p class="mb-2">
+        <a href="mailto:hola@fechaviva.com" style="color: var(--color-primary); font-weight: 600;">hola@fechaviva.com</a>
+      </p>
+      <p class="text-sm leading-relaxed" style="color: var(--color-body);">
+        Esta dirección es un punto de contacto general para Fechaviva y un marcador provisional hasta
+        que se establezca un buzón dedicado de privacidad. No implica que se almacenen datos de quién
+        nos escribe.
+      </p>
+    </section>
+
+    <nav class="flex flex-col sm:flex-row gap-3 pt-6 border-t" style="border-color: var(--color-border);">
+      <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold" style="color: var(--color-primary);">
+        &larr; Volver a la calculadora
+      </a>
+      <a href="/terms.html" class="inline-flex items-center gap-2 text-sm font-semibold" style="color: var(--color-primary);">
+        Términos y Condiciones &rarr;
+      </a>
+    </nav>
+  </article>
+</main>
+
+<footer class="border-t py-10" style="border-color: var(--color-border);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-sm" style="color: var(--color-body);">
+    <p>&copy; 2026 Fechaviva. Todos los derechos reservados.</p>
+    <p class="mt-2 text-xs">Las funciones astronómicas y de astrología son aproximadas con fines informativos.</p>
+    <div class="mt-3 flex justify-center gap-4 text-xs">
+      <a href="/" style="color: var(--color-body);">Inicio</a>
+      <a href="/privacy-policy.html" style="color: var(--color-body);">Privacidad</a>
+      <a href="/terms.html" style="color: var(--color-body);">Términos</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
