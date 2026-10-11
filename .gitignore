@@ -6,3 +6,4 @@ node_modules/
 .next/
 build/
 dist/
+scripts/
