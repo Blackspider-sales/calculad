@@ -212,20 +212,6 @@
     </svg>`;
   }
 
-  // ---------- Popular calculators (links) ----------
-
-  const popularCalculators = [
-    { icon: '🎂', title: 'Calculadora de Edad', desc: 'Edad exacta en años, meses y días', href: '/calculadora-de-edad/' },
-    { icon: '⏳', title: 'Cuenta Atrás de Cumpleaños', desc: 'Días, semanas y meses hasta tu cumpleaños', href: '/calculadora-de-cumpleanos/' },
-    { icon: '📅', title: 'Diferencia de Edad', desc: 'Compara dos fechas de nacimiento', href: '/diferencia-de-edad/' },
-    { icon: '🌗', title: 'Fase Lunar de Nacimiento', desc: 'Cómo estaba la luna el día que naciste', href: '/fase-lunar-de-nacimiento/' },
-    { icon: '♈', title: 'Signo Zodiacal', desc: 'Tu signo y sus características', href: '/signo-zodiacal/' },
-    { icon: '🐉', title: 'Horóscopo Chino', desc: 'Tu signo según el calendario chino', href: '/horoscopo-chino/' },
-    { icon: '💎', title: 'Piedra de Nacimiento', desc: 'La piedra asociada a tu mes', href: '/piedra-de-nacimiento/' },
-    { icon: '🌸', title: 'Flor de Nacimiento', desc: 'Tu flor del mes de nacimiento', href: '/flor-de-nacimiento/' },
-    { icon: '🔢', title: 'Numerología', desc: 'Número de la vida y del cumpleaños', href: '/numerologia-fecha-nacimiento/' },
-  ];
-
   // ---------- FAQ ----------
 
   const faqs = [
@@ -350,17 +336,6 @@
     `;
   }
 
-  function renderPopular() {
-    const grid = document.getElementById('popular-grid');
-    grid.innerHTML = popularCalculators.map(c => `
-      <a href="${c.href}" class="card p-5 hover:shadow-md transition-shadow">
-        <div class="text-2xl mb-2">${c.icon}</div>
-        <h3 class="font-semibold mb-1">${c.title}</h3>
-        <p class="text-sm" style="color: var(--color-body);">${c.desc}</p>
-      </a>
-    `).join('');
-  }
-
   function renderFAQ() {
     const list = document.getElementById('faq-list');
     list.innerHTML = faqs.map(f => `
@@ -418,7 +393,6 @@
       });
     });
 
-    renderPopular();
     renderFAQ();
   });
 
