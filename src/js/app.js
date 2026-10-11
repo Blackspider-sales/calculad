@@ -471,4 +471,13 @@
   }
 
   document.addEventListener('DOMContentLoaded', setupMotion);
+
+  // Safety net: if anything went wrong (JS error, observer never fires,
+  // slow network, reduced-motion misfiring), force-reveal everything so
+  // content is NEVER stuck invisible. 2.5s is well under human patience.
+  setTimeout(function () {
+    document.querySelectorAll('.reveal:not(.is-visible), .result-item:not(.is-visible)').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+  }, 2500);
 })();

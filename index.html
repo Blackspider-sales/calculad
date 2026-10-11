@@ -280,5 +280,27 @@
 
 <script src="src/js/icons.js"></script>
 <script src="src/js/app.js"></script>
+<script>
+// Safety net (inline, runs even if app.js fails to load):
+// 1. Immediately reveal anything above the fold so the calculator shows instantly.
+// 2. After 2.5s, force-reveal everything else so nothing stays stuck invisible.
+(function () {
+  'use strict';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function revealAll() {
+    document.querySelectorAll('.reveal:not(.is-visible), .result-item:not(.is-visible)').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+  }
+  if (reduce) { revealAll(); return; }
+  // Above-the-fold reveal: any element whose top is within the viewport.
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) el.classList.add('is-visible');
+  });
+  setTimeout(revealAll, 2500);
+})();
+</script>
+<noscript><style>.reveal,.result-item{opacity:1!important;transform:none!important}</style></noscript>
 </body>
 </html>
