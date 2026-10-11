@@ -94,33 +94,33 @@
   // ---------- Birth-date insights (cultural and approximate) ----------
 
   const westernZodiac = [
-    { name: 'Aries', symbol: '♈', element: 'Fuego', planet: 'Marte', startMonth: 3, startDay: 21, description: 'Aries se asocia culturalmente con la iniciativa y el impulso de abrir camino. En la tradición astrológica, se le atribuye una energía directa y valiente.' },
-    { name: 'Tauro', symbol: '♉', element: 'Tierra', planet: 'Venus', startMonth: 4, startDay: 20, description: 'Tauro se vincula culturalmente con la constancia, el disfrute y la estabilidad. La astrología tradicional le atribuye una forma paciente y práctica de avanzar.' },
-    { name: 'Géminis', symbol: '♊', element: 'Aire', planet: 'Mercurio', startMonth: 5, startDay: 21, description: 'Géminis se relaciona con la curiosidad, la conversación y el intercambio de ideas. La tradición astrológica lo describe como adaptable y ágil mentalmente.' },
-    { name: 'Cáncer', symbol: '♋', element: 'Agua', planet: 'La Luna', startMonth: 6, startDay: 21, description: 'Cáncer se asocia culturalmente con el cuidado, la memoria y los vínculos cercanos. En la astrología se le atribuye una sensibilidad protectora e intuitiva.' },
-    { name: 'Leo', symbol: '♌', element: 'Fuego', planet: 'El Sol', startMonth: 7, startDay: 23, description: 'Leo se vincula con la creatividad, la expresión personal y la generosidad. La tradición astrológica le atribuye calidez y gusto por brillar con autenticidad.' },
-    { name: 'Virgo', symbol: '♍', element: 'Tierra', planet: 'Mercurio', startMonth: 8, startDay: 23, description: 'Virgo se relaciona con la observación, el orden y la vocación de servicio. La astrología tradicional lo describe como meticuloso y orientado a mejorar lo cotidiano.' },
-    { name: 'Libra', symbol: '♎', element: 'Aire', planet: 'Venus', startMonth: 9, startDay: 23, description: 'Libra se asocia culturalmente con el equilibrio, la cooperación y la estética. En la tradición astrológica se le atribuye diplomacia y atención a la armonía.' },
-    { name: 'Escorpio', symbol: '♏', element: 'Agua', planet: 'Plutón y Marte', startMonth: 10, startDay: 23, description: 'Escorpio se vincula con la intensidad, la reserva y la transformación. La astrología tradicional le atribuye profundidad emocional y gran determinación.' },
-    { name: 'Sagitario', symbol: '♐', element: 'Fuego', planet: 'Júpiter', startMonth: 11, startDay: 22, description: 'Sagitario se relaciona con la exploración, el aprendizaje y la búsqueda de sentido. En la tradición astrológica se le atribuyen optimismo y franqueza.' },
-    { name: 'Capricornio', symbol: '♑', element: 'Tierra', planet: 'Saturno', startMonth: 12, startDay: 22, description: 'Capricornio se asocia culturalmente con la responsabilidad, la perseverancia y las metas a largo plazo. La astrología tradicional le atribuye disciplina y ambición serena.' },
-    { name: 'Acuario', symbol: '♒', element: 'Aire', planet: 'Urano y Saturno', startMonth: 1, startDay: 20, description: 'Acuario se vincula con la originalidad, las ideas colectivas y la independencia. En la tradición astrológica se le atribuye una mirada innovadora y poco convencional.' },
-    { name: 'Piscis', symbol: '♓', element: 'Agua', planet: 'Neptuno y Júpiter', startMonth: 2, startDay: 19, description: 'Piscis se relaciona con la imaginación, la empatía y la vida interior. La astrología tradicional le atribuye sensibilidad y una fuerte intuición.' },
+    { name: 'Aries', symbol: 'aries', element: 'Fuego', planet: 'Marte', startMonth: 3, startDay: 21, description: 'Aries se asocia culturalmente con la iniciativa y el impulso de abrir camino. En la tradición astrológica, se le atribuye una energía directa y valiente.' },
+    { name: 'Tauro', symbol: 'taurus', element: 'Tierra', planet: 'Venus', startMonth: 4, startDay: 20, description: 'Tauro se vincula culturalmente con la constancia, el disfrute y la estabilidad. La astrología tradicional le atribuye una forma paciente y práctica de avanzar.' },
+    { name: 'Géminis', symbol: 'gemini', element: 'Aire', planet: 'Mercurio', startMonth: 5, startDay: 21, description: 'Géminis se relaciona con la curiosidad, la conversación y el intercambio de ideas. La tradición astrológica lo describe como adaptable y ágil mentalmente.' },
+    { name: 'Cáncer', symbol: 'cancer', element: 'Agua', planet: 'La Luna', startMonth: 6, startDay: 21, description: 'Cáncer se asocia culturalmente con el cuidado, la memoria y los vínculos cercanos. En la astrología se le atribuye una sensibilidad protectora e intuitiva.' },
+    { name: 'Leo', symbol: 'leo', element: 'Fuego', planet: 'El Sol', startMonth: 7, startDay: 23, description: 'Leo se vincula con la creatividad, la expresión personal y la generosidad. La tradición astrológica le atribuye calidez y gusto por brillar con autenticidad.' },
+    { name: 'Virgo', symbol: 'virgo', element: 'Tierra', planet: 'Mercurio', startMonth: 8, startDay: 23, description: 'Virgo se relaciona con la observación, el orden y la vocación de servicio. La astrología tradicional lo describe como meticuloso y orientado a mejorar lo cotidiano.' },
+    { name: 'Libra', symbol: 'libra', element: 'Aire', planet: 'Venus', startMonth: 9, startDay: 23, description: 'Libra se asocia culturalmente con el equilibrio, la cooperación y la estética. En la tradición astrológica se le atribuye diplomacia y atención a la armonía.' },
+    { name: 'Escorpio', symbol: 'scorpio', element: 'Agua', planet: 'Plutón y Marte', startMonth: 10, startDay: 23, description: 'Escorpio se vincula con la intensidad, la reserva y la transformación. La astrología tradicional le atribuye profundidad emocional y gran determinación.' },
+    { name: 'Sagitario', symbol: 'sagittarius', element: 'Fuego', planet: 'Júpiter', startMonth: 11, startDay: 22, description: 'Sagitario se relaciona con la exploración, el aprendizaje y la búsqueda de sentido. En la tradición astrológica se le atribuyen optimismo y franqueza.' },
+    { name: 'Capricornio', symbol: 'capricorn', element: 'Tierra', planet: 'Saturno', startMonth: 12, startDay: 22, description: 'Capricornio se asocia culturalmente con la responsabilidad, la perseverancia y las metas a largo plazo. La astrología tradicional le atribuye disciplina y ambición serena.' },
+    { name: 'Acuario', symbol: 'aquarius', element: 'Aire', planet: 'Urano y Saturno', startMonth: 1, startDay: 20, description: 'Acuario se vincula con la originalidad, las ideas colectivas y la independencia. En la tradición astrológica se le atribuye una mirada innovadora y poco convencional.' },
+    { name: 'Piscis', symbol: 'pisces', element: 'Agua', planet: 'Neptuno y Júpiter', startMonth: 2, startDay: 19, description: 'Piscis se relaciona con la imaginación, la empatía y la vida interior. La astrología tradicional le atribuye sensibilidad y una fuerte intuición.' },
   ];
 
   const chineseZodiac = [
-    { name: 'Rata', emoji: '🐀', description: 'La Rata se asocia culturalmente con el ingenio y la capacidad de adaptación. En el horóscopo chino tradicional, se le atribuyen iniciativa y sentido de la oportunidad.' },
-    { name: 'Buey', emoji: '🐂', description: 'El Buey se vincula con la constancia, la paciencia y el trabajo sostenido. La tradición cultural lo describe como alguien fiable y firme en sus decisiones.' },
-    { name: 'Tigre', emoji: '🐅', description: 'El Tigre se relaciona con el coraje, la energía y el espíritu independiente. En la tradición china se le atribuyen entusiasmo y una presencia decidida.' },
-    { name: 'Conejo', emoji: '🐇', description: 'El Conejo se asocia con la amabilidad, la prudencia y la búsqueda de armonía. El horóscopo chino tradicional le atribuye tacto y sensibilidad social.' },
-    { name: 'Dragón', emoji: '🐉', description: 'El Dragón se vincula con la ambición, el carisma y la imaginación. En la tradición china se le atribuyen confianza y una energía especialmente expansiva.' },
-    { name: 'Serpiente', emoji: '🐍', description: 'La Serpiente se relaciona con la reflexión, la intuición y la estrategia. La tradición cultural le atribuye elegancia y una forma reservada de observar.' },
-    { name: 'Caballo', emoji: '🐎', description: 'El Caballo se asocia con el movimiento, la libertad y el entusiasmo. En el horóscopo chino tradicional se le atribuyen sociabilidad e iniciativa.' },
-    { name: 'Cabra', emoji: '🐐', description: 'La Cabra se vincula con la creatividad, la empatía y la apreciación de la belleza. La tradición china le atribuye una naturaleza serena y considerada.' },
-    { name: 'Mono', emoji: '🐒', description: 'El Mono se relaciona con la curiosidad, la agudeza y el juego intelectual. En el horóscopo chino tradicional se le atribuyen ingenio y versatilidad.' },
-    { name: 'Gallo', emoji: '🐓', description: 'El Gallo se asocia con la precisión, la seguridad y la expresión franca. La tradición cultural le atribuye atención al detalle y determinación.' },
-    { name: 'Perro', emoji: '🐕', description: 'El Perro se vincula con la lealtad, la honestidad y el sentido de la justicia. En el horóscopo chino tradicional se le atribuyen compromiso y protección hacia los suyos.' },
-    { name: 'Cerdo', emoji: '🐖', description: 'El Cerdo se relaciona con la generosidad, la sinceridad y el gusto por compartir. La tradición china le atribuye calidez y una disposición conciliadora.' },
+    { name: 'Rata', animal: 'Rata', description: 'La Rata se asocia culturalmente con el ingenio y la capacidad de adaptación. En el horóscopo chino tradicional, se le atribuyen iniciativa y sentido de la oportunidad.' },
+    { name: 'Buey', animal: 'Buey', description: 'El Buey se vincula con la constancia, la paciencia y el trabajo sostenido. La tradición cultural lo describe como alguien fiable y firme en sus decisiones.' },
+    { name: 'Tigre', animal: 'Tigre', description: 'El Tigre se relaciona con el coraje, la energía y el espíritu independiente. En la tradición china se le atribuyen entusiasmo y una presencia decidida.' },
+    { name: 'Conejo', animal: 'Conejo', description: 'El Conejo se asocia con la amabilidad, la prudencia y la búsqueda de armonía. En el horóscopo chino tradicional se le atribuyen tacto y sensibilidad social.' },
+    { name: 'Dragón', animal: 'Dragón', description: 'El Dragón se vincula con la ambición, el carisma y la imaginación. En la tradición china se le atribuyen confianza y una energía especialmente expansiva.' },
+    { name: 'Serpiente', animal: 'Serpiente', description: 'La Serpiente se relaciona con la reflexión, la intuición y la estrategia. La tradición cultural le atribuye elegancia y una forma reservada de observar.' },
+    { name: 'Caballo', animal: 'Caballo', description: 'El Caballo se asocia con el movimiento, la libertad y el entusiasmo. En el horóscopo chino tradicional se le atribuyen sociabilidad e iniciativa.' },
+    { name: 'Cabra', animal: 'Cabra', description: 'La Cabra se vincula con la creatividad, la empatía y la apreciación de la belleza. La tradición cultural le atribuye una naturaleza serena y considerada.' },
+    { name: 'Mono', animal: 'Mono', description: 'El Mono se relaciona con la curiosidad, la agudeza y el juego intelectual. En la tradición china se le atribuyen ingenio y versatilidad.' },
+    { name: 'Gallo', animal: 'Gallo', description: 'El Gallo se asocia con la precisión, la seguridad y la expresión franca. La tradición cultural le atribuye atención al detalle y determinación.' },
+    { name: 'Perro', animal: 'Perro', description: 'El Perro se vincula con la lealtad, la honestidad y el sentido de la justicia. La tradición cultural le atribuye compromiso y protección hacia los suyos.' },
+    { name: 'Cerdo', animal: 'Cerdo', description: 'El Cerdo se relaciona con la generosidad, la sinceridad y el gusto por compartir. La tradición china le atribuye calidez y una disposición conciliadora.' },
   ];
 
   const chineseElements = ['Metal', 'Metal', 'Agua', 'Agua', 'Madera', 'Madera', 'Fuego', 'Fuego', 'Tierra', 'Tierra'];
@@ -222,7 +222,14 @@
     { q: '¿Puedo calcular mi edad en una fecha del pasado o futuro?', a: 'Sí. Usa el campo "Calcular en la fecha" para cualquier día pasado o futuro.' },
   ];
 
-  // ---------- Render ----------
+  // ---------- Icons ----------
+
+  // Emoji are gone from the data too; icons.js supplies stroke SVG instead.
+  var icons = window.FechavivaIcons || { icon: function () { return ''; } };
+  var icon = icons.icon;
+  function mapIcon(animal) { return icons.chinese ? icons.chinese(animal) : ''; }
+
+// ---------- Render ----------
 
   function renderResults(r) {
     const el = document.getElementById('results');
@@ -249,8 +256,8 @@
           ${statCard('Días', r.totalDays.toLocaleString('es'))}
           ${statCard('Horas', r.totalHours.toLocaleString('es'))}
         </div>
-        <div class="rounded-lg p-4" style="background-color: var(--color-highlight);">
-          <p class="text-sm font-semibold mb-1" style="color: var(--color-heading);">🎂 Tu próximo cumpleaños</p>
+        <div class="rounded-lg p-4 result-item" style="background-color: var(--color-highlight);">
+          <p class="text-sm font-semibold mb-1" style="color: var(--color-heading);">${icon('cake')} Tu próximo cumpleaños</p>
           <p class="text-sm" style="color: var(--color-body);">
             Te quedan <strong>${r.daysUntilBirthday}</strong> días (<strong>${r.weeksUntilBirthday}</strong> semanas).
             Cumplirás <strong>${r.ageOnNextBirthday}</strong> años.
@@ -261,11 +268,11 @@
         <h2 id="zodiaco-title" class="text-2xl font-display font-bold mb-3">Tu zodiaco</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           ${zodiacCard('Zodiaco occidental', western.symbol, western.name, western.element, western.planet, western.description)}
-          ${zodiacCard('Zodiaco chino', chinese.emoji, chinese.name, chinese.element, 'No aplica en la tradición china', chinese.description)}
+          ${zodiacCard('Zodiaco chino', chinese.animal, chinese.name, chinese.element, 'No aplica en la tradición china', chinese.description)}
         </div>
         <p class="text-xs mt-3" style="color: var(--color-body);">Las interpretaciones de la astrologia son culturales y de entretenimiento, no cientificas.</p>
       </section>
-      <section class="card p-6 mt-6 moon-card" aria-labelledby="luna-title">
+      <section class="card card-hover reveal p-6 mt-6 moon-card" aria-labelledby="luna-title">
         <div class="moon-layout">
           ${moonSvg(moon)}
           <div>
@@ -283,11 +290,11 @@
       <section class="mt-6" aria-labelledby="nacimiento-title">
         <h2 id="nacimiento-title" class="text-2xl font-display font-bold mb-3">Símbolos de ${birthDetails.month}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          ${birthCard('Piedra de nacimiento', '💎', birthDetails.stone, birthDetails.stoneMeaning)}
-          ${birthCard('Flor de nacimiento', '🌸', birthDetails.flower, birthDetails.flowerMeaning)}
+          ${birthCard('Piedra de nacimiento', 'gem', birthDetails.stone, birthDetails.stoneMeaning)}
+          ${birthCard('Flor de nacimiento', 'flower', birthDetails.flower, birthDetails.flowerMeaning)}
         </div>
       </section>
-      <section class="card p-6 mt-6" aria-labelledby="hitos-title">
+      <section class="card card-hover reveal p-6 mt-6" aria-labelledby="hitos-title">
         <p class="text-sm font-semibold mb-1" style="color: var(--color-primary);">Línea de vida</p>
         <h2 id="hitos-title" class="text-2xl font-display font-bold mb-4">Hitos de tiempo</h2>
         <ol class="milestone-timeline">
@@ -305,10 +312,12 @@
   }
 
   function zodiacCard(title, symbol, name, element, planet, description) {
+    // `symbol` is an icon key ('aries') or a Chinese zodiac animal name.
+    const visual = mapIcon(symbol) || icon(symbol);
     return `
-      <article class="card p-5">
+      <article class="card card-hover reveal p-5">
         <div class="flex items-center gap-3 mb-3">
-          <span class="zodiac-symbol" aria-hidden="true">${symbol}</span>
+          <span class="zodiac-symbol" aria-hidden="true">${visual}</span>
           <div><p class="text-xs" style="color: var(--color-body);">${title}</p><h3 class="text-xl font-display font-bold">${name}</h3></div>
         </div>
         <div class="zodiac-details text-sm mb-3" style="color: var(--color-body);">
@@ -319,17 +328,17 @@
       </article>`;
   }
 
-  function birthCard(title, icon, name, meaning) {
+  function birthCard(title, iconName, name, meaning) {
     return `
-      <article class="card p-5">
-        <div class="flex items-center gap-3 mb-2"><span class="birth-icon" aria-hidden="true">${icon}</span><div><p class="text-xs" style="color: var(--color-body);">${title}</p><h3 class="text-xl font-display font-bold">${name}</h3></div></div>
+      <article class="card card-hover reveal p-5">
+        <div class="flex items-center gap-3 mb-2"><span class="birth-icon" aria-hidden="true">${icon(iconName)}</span><div><p class="text-xs" style="color: var(--color-body);">${title}</p><h3 class="text-xl font-display font-bold">${name}</h3></div></div>
         <p class="text-sm" style="color: var(--color-body);">${meaning}</p>
       </article>`;
   }
 
   function statCard(label, value) {
     return `
-      <div class="card p-4">
+      <div class="card result-item p-4">
         <div class="text-xs mb-1" style="color: var(--color-body);">${label}</div>
         <div class="font-display font-bold text-xl" style="color: var(--color-heading);">${value}</div>
       </div>
@@ -339,7 +348,7 @@
   function renderFAQ() {
     const list = document.getElementById('faq-list');
     list.innerHTML = faqs.map(f => `
-      <details class="card p-5">
+      <details class="card reveal p-5">
         <summary class="font-semibold cursor-pointer" style="color: var(--color-heading);">${f.q}</summary>
         <p class="mt-3 text-sm" style="color: var(--color-body);">${f.a}</p>
       </details>
@@ -357,8 +366,19 @@
     // Update theme icon
     function updateIcon() {
       const dark = document.documentElement.classList.contains('dark');
-      const icon = document.getElementById('theme-icon');
-      if (icon) icon.textContent = dark ? '☀️' : '🌙';
+      const holder = document.getElementById('theme-icon');
+      if (holder) {
+        const next = icon(dark ? 'sun' : 'moon');
+        const current = holder.querySelector('svg');
+        const fresh = document.createElement('div');
+        fresh.innerHTML = next;
+        const replacement = fresh.firstChild;
+        if (current) {
+          holder.replaceChild(replacement, current);
+        } else {
+          holder.appendChild(replacement);
+        }
+      }
       const button = document.querySelector('[data-theme-toggle]');
       if (button) {
         button.setAttribute('aria-pressed', String(dark));
@@ -377,10 +397,12 @@
       if (!r.ok) {
         const el = document.getElementById('results');
         el.classList.remove('hidden');
-        el.innerHTML = `<div class="card p-6 text-center" style="color: var(--color-heading);">⚠️ ${r.error}</div>`;
+        el.innerHTML = `<div class="card p-6 text-center" style="color: var(--color-heading);">${icon('warn')} ${r.error}</div>`;
         return;
       }
       renderResults(r);
+      // Announce the new panel so the motion observer picks it up.
+      document.dispatchEvent(new CustomEvent('calculated'));
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -401,4 +423,52 @@
     calculateAge, parseDate, daysBetween, completedUnits,
     getWesternZodiac, getChineseZodiac, getMoonPhase, getMilestones
   };
+
+  // ---------- Motion ----------
+  function setupMotion() {
+    if (!('IntersectionObserver' in window)) {
+      // No observer: leave everything visible instead of hiding it forever.
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Siblings reveal in sequence with a 60ms step, capped so long lists do not lag.
+    var groups = document.querySelectorAll('.reveal-group');
+    groups.forEach(function (group) {
+      Array.prototype.forEach.call(group.querySelectorAll('.reveal'), function (el, i) {
+        el.style.transitionDelay = Math.min(i, 11) * 60 + 'ms';
+      });
+    });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    var targets = document.querySelectorAll('.reveal');
+    Array.prototype.forEach.call(targets, function (el) {
+      // Above the fold: reveal immediately. Off-screen: reveal on scroll.
+      if (reduce || el.getBoundingClientRect().top < window.innerHeight * 0.85) {
+        el.classList.add('is-visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+
+    // Results are injected after submit, so re-scan them there.
+    document.addEventListener('calculated', function () {
+      var results = document.getElementById('results');
+      if (!results || results.classList.contains('is-visible')) return;
+      Array.prototype.forEach.call(results.querySelectorAll('.result-item'), function (el, i) {
+        el.style.transitionDelay = Math.min(i, 11) * 50 + 'ms';
+      });
+      observer.observe(results);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupMotion);
 })();

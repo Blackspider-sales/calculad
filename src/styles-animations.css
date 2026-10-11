@@ -1,0 +1,86 @@
+/* Motion layer for Fechaviva.
+   Deliberately small: one scroll-reveal, a hover lift, and a results stagger.
+   Everything honours prefers-reduced-motion and adds no motion on hover alone. */
+
+/* Inline SVG icons inherit the surrounding text colour and never shrink. */
+svg.icon { flex: 0 0 auto; }
+
+/* Smooth theme swap: colours cross-fade over 200ms. Scoped to colour-only
+   properties so it never fights the reveal or hover transforms. The :not()
+   list leaves elements that own a richer transition on their own timing. */
+body,
+body *:not(.card-hover):not(.btn-primary):not(.input-field) {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Cards that lift on hover. `transform` is added to the transition property so
+   the lift and the shadow animate together instead of one snapping. */
+.card-hover {
+  box-shadow: var(--tw-shadow, none);
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Primary button hover is handled in src/styles.css; keep it at 150ms. */
+
+/* Scroll reveal: fade + 16px rise, 600ms, gentle ease-out.
+   Inline transition-delay carries the per-group stagger. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Results: the injected cards stagger in 50ms apart. The container also
+   carries .reveal, so the whole block fades in before its cards cascade. */
+.result-item {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.result-item.is-visible,
+#results.is-visible .result-item {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  /* !important beats the more specific .is-visible rules above, so content is
+     always fully visible for users who opt out of motion. */
+  .reveal,
+  .reveal.is-visible,
+  .result-item,
+  .result-item.is-visible,
+  #results.is-visible .result-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  body,
+  body *,
+  .card-hover:hover,
+  .btn-primary:active {
+    transition: none !important;
+  }
+  .card-hover:hover { transform: none; }
+}
