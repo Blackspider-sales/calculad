@@ -82,8 +82,9 @@
     </p>
   </div>
 
-  <!-- Calculator -->
-  <div id="calculadora" class="max-w-3xl mx-auto card card-hover reveal p-6 md:p-8 shadow-sm">
+  <!-- Calculator: NEVER use .reveal here. Core content must be visible on first paint,
+       even if JS fails to load. -->
+  <div id="calculadora" class="max-w-3xl mx-auto card card-hover p-6 md:p-8 shadow-sm">
     <form id="age-form" aria-label="Calculadora de edad" class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
       <div>
         <label for="dob" class="block text-sm font-medium mb-2" style="color: var(--color-heading);">Fecha de nacimiento</label>
@@ -281,9 +282,10 @@
 <script src="src/js/icons.js"></script>
 <script src="src/js/app.js"></script>
 <script>
-// Safety net (inline, runs even if app.js fails to load):
-// 1. Immediately reveal anything above the fold so the calculator shows instantly.
-// 2. After 2.5s, force-reveal everything else so nothing stays stuck invisible.
+// Safety net (inline, runs even if app.js fails):
+// 1. Immediately reveal anything in the viewport.
+// 2. Force-reveal EVERYTHING on DOMContentLoaded (no 2.5s wait).
+// 3. Force-reveal after 1s as a hard fallback.
 (function () {
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -292,15 +294,30 @@
       el.classList.add('is-visible');
     });
   }
-  if (reduce) { revealAll(); return; }
-  // Above-the-fold reveal: any element whose top is within the viewport.
+  if (reduce) {
+    // Reduced motion: no animation, just reveal everything now.
+    revealAll();
+    return;
+  }
+  // Immediate pass: reveal anything currently in the viewport.
   document.querySelectorAll('.reveal').forEach(function (el) {
     var rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) el.classList.add('is-visible');
+    if (rect.top >= 0 && rect.top < window.innerHeight) el.classList.add('is-visible');
   });
-  setTimeout(revealAll, 2500);
+  // Hard fallback 1: reveal everything as soon as DOM is ready.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', revealAll);
+  } else {
+    revealAll();
+  }
+  // Hard fallback 2: reveal everything after 1 second no matter what.
+  setTimeout(revealAll, 1000);
 })();
 </script>
+<style>
+/* ULTIMATE FALLBACK for when JS is disabled entirely.
+   Without JS, the .reveal elements would stay at opacity:0 forever. */
+</style>
 <noscript><style>.reveal,.result-item{opacity:1!important;transform:none!important}</style></noscript>
 </body>
 </html>
