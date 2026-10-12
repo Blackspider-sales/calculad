@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Mapa del Sitio - Fechaviva</title>
+  <link rel="canonical" href="https://fechaviva.com/sitemap.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232864DC'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,sans-serif' font-size='31' font-weight='700' fill='white'%3EC%2B%3C/text>%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="stylesheet" href="src/styles-animations.css">
+  <script src="src/js/theme.js"></script>
+  <style>
+    .sitemap-hero { text-align: center; padding: 4rem 0 3rem; }
+    .sitemap-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin-top: 2.5rem; }
+    .sitemap-card { display: block; text-decoration: none; border-radius: 14px; border: 1px solid var(--color-border); background: var(--color-surface); padding: 1.5rem; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .sitemap-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); border-color: var(--color-primary); }
+    .sitemap-card .icon-wrap { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.4rem; background: var(--color-highlight); }
+    .sitemap-card h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: .4rem; color: var(--color-heading); }
+    .sitemap-card p { font-size: .875rem; line-height: 1.5; color: var(--color-body); margin: 0; }
+    .sitemap-card .tag { display: inline-block; font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: .2rem .55rem; border-radius: 99px; margin-top: .75rem; }
+    .tag-main { background: var(--color-primary); color: white; }
+    .tag-section { background: var(--color-highlight); color: var(--color-primary); }
+    .tag-legal { background: var(--color-surface); color: var(--color-body); border: 1px solid var(--color-border); }
+    .sitemap-section-title { grid-column: 1 / -1; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--color-body); margin-top: 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--color-border); }
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="border-b" style="border-color: var(--color-border);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: var(--color-primary);">
+          <span class="text-white font-bold text-sm" style="font-family: 'Manrope', sans-serif;">C+</span>
+        </div>
+        <span class="font-display font-bold text-lg" style="color: var(--color-heading);">Fechaviva</span>
+      </a>
+      <button type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background-color: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-heading);">
+        <span id="theme-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="sitemap-hero">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h1 class="text-3xl md:text-4xl font-display font-extrabold mb-3" style="color: var(--color-heading);">Mapa del Sitio</h1>
+        <p class="text-base md:text-lg" style="color: var(--color-body);">Todas las páginas de Fechaviva en un solo lugar.</p>
+      </div>
+    </section>
+
+    <section class="border-t py-12 md:py-16" style="border-color: var(--color-border);">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+
+        <div class="sitemap-grid">
+          <div class="sitemap-section-title">Herramienta Principal</div>
+          <a href="/" class="sitemap-card">
+            <div class="icon-wrap">🎂</div>
+            <h3>Calculadora de Edad</h3>
+            <p>Calcula tu edad exacta en años, meses y días. Descubre tu signo zodiacal, fase lunar, piedras de nacimiento y más.</p>
+            <span class="tag tag-main">Principal</span>
+          </a>
+        </div>
+
+        <div class="sitemap-grid" style="margin-top: 2rem;">
+          <div class="sitemap-section-title">Secciones de la Página</div>
+          <a href="/#calculadora" class="sitemap-card">
+            <div class="icon-wrap">🧮</div>
+            <h3>Calculadora</h3>
+            <p>Introduce tu fecha de nacimiento y obtén tu edad exacta al instante, con todos los detalles numéricos.</p>
+            <span class="tag tag-section">Sección</span>
+          </a>
+          <a href="/#descubrimiento" class="sitemap-card">
+            <div class="icon-wrap">✨</div>
+            <h3>Descubre Tu Nacimiento</h3>
+            <p>Horóscopo chino, número de camino de vida, generaciones, famosos, eventos históricos y fase lunar.</p>
+            <span class="tag tag-section">Sección</span>
+          </a>
+          <a href="/#faq" class="sitemap-card">
+            <div class="icon-wrap">❓</div>
+            <h3>Preguntas Frecuentes</h3>
+            <p>Respuestas sobre años bisiestos, privacidad, cálculo de signos, numerología y más.</p>
+            <span class="tag tag-section">Sección</span>
+          </a>
+        </div>
+
+        <div class="sitemap-grid" style="margin-top: 2rem;">
+          <div class="sitemap-section-title">Legal e Información</div>
+          <a href="/privacy-policy.html" class="sitemap-card">
+            <div class="icon-wrap">🔒</div>
+            <h3>Política de Privacidad</h3>
+            <p>Cómo tratamos tus datos (spoiler: no los tratamos, todo pasa en tu navegador).</p>
+            <span class="tag tag-legal">Legal</span>
+          </a>
+          <a href="/terms.html" class="sitemap-card">
+            <div class="icon-wrap">📜</div>
+            <h3>Términos y Condiciones</h3>
+            <p>Condiciones de uso del servicio, limitaciones de responsabilidad y propiedad intelectual.</p>
+            <span class="tag tag-legal">Legal</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="border-t py-12" style="border-color: var(--color-border);">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <p class="text-sm" style="color: var(--color-body);">
+          ¿No encuentras lo que buscas? Ve a la <a href="/" style="color: var(--color-primary); font-weight: 600;">página principal</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t py-8" style="border-color: var(--color-border);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-sm" style="color: var(--color-body);">
+      <p>&copy; 2026 Fechaviva. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="src/js/icons.js"></script>
+  <script>
+    // Reuse theme toggle from main page
+    document.querySelector('[data-theme-toggle]')?.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('calcultad-theme', isDark ? 'dark' : 'light');
+      window.dispatchEvent(new CustomEvent('themechange'));
+      const icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.innerHTML = isDark
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+      }
+    });
+    // Set initial state
+    (function() {
+      const saved = localStorage.getItem('calcultad-theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        const icon = document.getElementById('theme-icon');
+        if (icon) {
+          icon.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

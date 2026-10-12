@@ -1,2 +1,11 @@
+# robots.txt - Fechaviva
+# Calculadora de Edad en Español
+
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://fechaviva.com/sitemap.xml
+
+# Crawl rate suggestion
+Crawl-delay: 10

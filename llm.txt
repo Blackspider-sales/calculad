@@ -1,0 +1,52 @@
+# Fechaviva - Calculadora de Edad en Español
+
+Fechaviva es una calculadora de edad gratuita y privada en español. Calcula tu edad exacta en años, meses y días, y descubre datos fascinantes sobre tu fecha de nacimiento: signo zodiacal, signo chino, número de camino de vida, generación, fase lunar, piedras de nacimiento, famosos nacidos contigo y eventos históricos.
+
+## Funciones
+
+- Calcula tu edad exacta en años, meses y días
+- Descubre tu signo del zodíaco occidental (12 signos)
+- Descubre tu signo del zodíaco chino (12 animales)
+- Calcula tu número de camino de vida (numerología 1-9 + maestros 11, 22, 33)
+- Identifica tu generación (Silenciosa, Boomers, Gen X, Millennials, Gen Z)
+- Descubre famosos nacidos en el mismo día que tú
+- Explora eventos históricos de tu fecha de nacimiento
+- Calcula la fase lunar aproximada al nacer (Luna Nueva, Creciente, Llena, Menguante)
+- Conoce tu piedra de nacimiento según tu mes
+- Descubre tu flor de nacimiento
+- Calcula tu edad en otros planetas
+- Calcula días, semanas, meses y horas vividas
+- Conoce cuándo fue tu cumpleaños anterior y tu próximo cumpleaños
+- Calcula hitos de tiempo: 1,000 días, 1,000 semanas, 10,000 días, 1,000 millones de segundos
+
+## Cómo Funciona
+
+1. Introduce tu fecha de nacimiento en el campo "Fecha de nacimiento"
+2. Opcionalmente, cambia la fecha de referencia en "Calcular en la fecha" para conocer tu edad en cualquier día pasado o futuro
+3. Haz clic en "Calcular Edad" y obtén tu edad exacta al instante con todos los datos de descubrimiento
+
+## Privacidad
+
+Todo el cálculo se realiza localmente en tu navegador. No se envía ningún dato a servidores externos. No se usan cookies de rastreo. La única información almacenada localmente es tu preferencia de tema (claro/oscuro).
+
+## Precisión
+
+- El cálculo de edad es matemáticamente exacto según el calendario gregoriano, incluyendo años bisiestos.
+- Las funciones astronómicas y astrológicas (signos, fase lunar, piedras) son aproximadas y con fines informativos y de entretenimiento.
+- La fase lunar se calcula asumiendo mediodía UTC de la fecha indicada.
+
+## Enlaces
+
+- [Inicio / Calculadora](https://fechaviva.com/)
+- [Mapa del Sitio](https://fechaviva.com/sitemap.html)
+- [Política de Privacidad](https://fechaviva.com/privacy-policy.html)
+- [Términos y Condiciones](https://fechaviva.com/terms.html)
+- [Sitemap XML](https://fechaviva.com/sitemap.xml)
+
+## Idioma
+
+Español (español neutral, válido para España, México, Argentina, Colombia, Perú, Chile, Venezuela, Ecuador, Bolivia y Puerto Rico).
+
+## Licencia
+
+© 2026 Fechaviva. Todos los derechos reservados.
